@@ -4,7 +4,7 @@ import bgImg from "../assets/meals.jpg"; // <-- replace with your actual meal ba
 export default function Meals() {
   return (
     <div
-      className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white"
+      className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white" 
       style={{ backgroundImage: `url(${bgImg})` }}
     >
       {/* Overlay */}
@@ -17,9 +17,8 @@ export default function Meals() {
           Explore our wide range of delicious meals prepared with passion,
           authentic recipes, and the freshest ingredients.
         </p>
-        <button className="px-10 py-4 bg-yellow-500 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition">
-          Explore
-        </button>
+        
+        <a href="#explore" className="hoverunderline:px-10 py-4 bg-yellow-500 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition">Explore</a>
       </div>
     </div>
   );

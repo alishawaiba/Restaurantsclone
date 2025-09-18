@@ -21,7 +21,7 @@ const Reservation = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-70 p-6 bg-white rounded-xl shadow-md">
+    <div className="max-w-md mx-auto mt-70 p-6 bg-white rounded-xl shadow-md" id="book">
       <h2 className="text-2xl font-bold mb-4 text-center text-purple-600">Book a Table</h2>
       <form onSubmit={handleSubmit} className="space-y-3">
         {["name","email","phone"].map((field) => (

@@ -4,7 +4,7 @@ import bgImg from "../assets/Gallery.jpg";
 export default function Gallery() {
   return (
     <div
-      className="relative h-screen mt- w-full bg-cover bg-center flex flex-col justify-center items-center text-white transition-transform duration-500 hover:scale-105"
+      className="relative h-screen mt- w-full bg-cover bg-center flex flex-col justify-center items-center text-white transition-transform duration-500 hover:scale-105" id="Gallery"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
       {/* Dark overlay for readability */}

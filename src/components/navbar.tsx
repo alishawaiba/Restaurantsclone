@@ -27,7 +27,7 @@ export default function Navbar() {
         <h1 className="text-4xl md:text-5xl font-bold text-purple-500">
           Welcome to TAOR Restaurant
         </h1>
-        <p className="mt-4 text-white text-lg md:text-xl max-w-2xl">
+        <p className="mt-4 text-white text-lg md:text-xl max-w-2xl" id="explore">
           Explore our delicious menu, browse our drinks, and discover the story
           of our restaurant.
         </p>
@@ -48,9 +48,8 @@ export default function Navbar() {
             <a href="tel:+5552323454" className="hover:underline">
               +555 (23) 234 54
             </a>
-            <button className="bg-green-600 text-black px-4 py-2 rounded-md hover:bg-green-700">
-              BOOK A TABLE
-            </button>
+          
+            <a href="#book" className="hover:underline bg-green-600 text-black px-4 py-2 rounded-md hover:bg-green-700">Book a table</a>
           </div>
         </nav>
 
@@ -65,19 +64,15 @@ export default function Navbar() {
             <a href="#drinks" className="hover:underline ">Drinks</a>
            
             <a href="#ourstory" className="hover:underline">Our Story</a>
-            <Link to="/Restaurants" className="hover:underline">
-              Restaurants
-            </Link>
+           
+            
             <a href="#restaurants" className="hover:underline">Restaurants</a>
-            <Link to="/Gallery" className="hover:underline">
-              Gallery
-            </Link>
-            <Link to="/Contact" className="hover:underline">
-              Contacts
-            </Link>
-            <Link to="/Offer" className="hover:underline">
-              Offers
-            </Link>
+           
+            <a href="#gallery" className="hover:underline">Gallery</a>
+           
+            <a href="#contact" className="hover:underline">Contact</a>
+            
+            <a href="#offer" className="hover:underline">Offer</a>
           </div>
         </nav>
       </div>

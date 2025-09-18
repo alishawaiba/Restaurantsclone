@@ -17,9 +17,10 @@ export default function OurStory() {
           It all started with the opening of the first Taor restaurant in 1980.
           A journey of passion, flavors, and unforgettable experiences.
         </p>
-        <button className="px-10 py-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200 transition">
+        <button className="px-10 py-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200 transition" >
           Explore
         </button>
+        
       </div>
     </div>
   );

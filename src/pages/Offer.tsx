@@ -23,7 +23,7 @@ const offers = [
 
 export default function OfferDropdown() {
   return (
-    <div className="w-full bg-black py-10">
+    <div className="w-full bg-black py-10" id="offer">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
         {offers.map((offer, index) => (
           <div

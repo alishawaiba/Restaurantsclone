@@ -4,7 +4,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 
 const Contact: React.FC = () => {
   return (
-    <div className="relative mt-50 h-screen w-full overflow-hidden">
+    <div className="relative mt-50 h-screen w-full overflow-hidden"id="contact">
       {/* Background Image */}
       <img
         src={bgImage}
