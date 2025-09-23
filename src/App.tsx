@@ -10,6 +10,9 @@ import Footer from "./components/Footer";
 import OurStory from "./pages/Ourstory";
 import Offer from "./pages/Offer";
 import Navbar from "./components/navbar"; 
+import Hero from "./components/hero/Hero";
+
+
 
 function App() {
   return (
@@ -17,9 +20,8 @@ function App() {
       <div className="flex-grow">
        
           <Navbar />
-          
+          <Home/>
          <Menu/>
-         
          <Drinks/>
          <Offer/>
          <OurStory/>
@@ -27,6 +29,8 @@ function App() {
          <Contact/>
          <Gallery/>
          <Restaurants/>
+         
+         
          
 
       </div>
