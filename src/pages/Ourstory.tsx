@@ -70,20 +70,24 @@ export default function OurStory() {
    <div className="flex flex-col text-center justify-center items-center">
 
     <span className="flex gap-5">
-      <span className="flex items-center bg-green-700 text-white border-green-700 justify-center border rounded-full h-10 w-10">
+      <span className="flex items-center bg-green-700 text-white border-green-700 justify-center border rounded-full h-10 w-10 ml-5">
       <Check />
       </span>
       <p className="text-start">Fress
             <span className="block">Our cuisine is characterized by the fresh meals </span> </p></span>
 
-      <span className="flex gap-5">
-      <span className="flex items-center bg-green-700 text-white border-green-700 justify-center border rounded-full h-10 w-10">
+             <span className="border border-gray-400 h-20 flex mr-82 mt-1"/>
+
+      <span className="flex mt-3 gap-5">
+      <span className="flex items-center bg-green-700 text-white border-green-700 justify-center border rounded-full h-10 w-10 ml-7">
       <Check/>
       </span> <p className="text-start">Tasty
              <span className="block"> We provide tasty food in a pleasant atmosphere </span></p>
       </span>
 
-      <span className="flex gap-5">
+      <span className="border border-gray-400 h-20 flex mr-82 mt-1"/>
+
+      <span className="flex gap-5 mt-3">
       <span className="flex items-center bg-green-700 text-white border-green-700 justify-center border rounded-full h-10 w-10">
       <Check/>
       </span> 
