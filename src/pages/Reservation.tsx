@@ -43,6 +43,7 @@ const Reservation = () => {
         <input type="time" name="time" value={data.time} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg"/>
         <button className="w-full py-2 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition">Reserve</button>
       </form>
+      
     </div>
   );
 };

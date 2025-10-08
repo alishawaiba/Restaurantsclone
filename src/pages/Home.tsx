@@ -9,12 +9,12 @@ const Home = () => {
 
   return (
     <div id="home" className="relative w-full h-screen overflow-hidden">
-      {/* Navbar at the top */}
-      {/* <Navbar /> */}
+    
+      
 
-      {/* Background video */}
+      
       <video
-        src={bgvideo} // ✅ using imported video
+        src={bgvideo} 
         autoPlay
         loop
         muted
@@ -22,7 +22,7 @@ const Home = () => {
         className="absolute inset-0 w-full h-full object-cover -z-10"
       />
 
-      {/* Hero Section */}
+      
       <Hero />
       
     </div>

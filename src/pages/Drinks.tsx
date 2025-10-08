@@ -1,53 +1,89 @@
 import React from "react";
-import bgImage from "../assets/.jpg";
-import drink1 from "../assets/1Drinks.jpeg";
-import drink2 from "../assets/2Drinks.jpeg";
-import drink3 from "../assets/3Drinks.jpeg";
-import drink4 from "../assets/4Drinks.jpeg";
-import drink5 from "../assets/5Drinks.jpeg";
-import drink6 from "../assets/6Drinks.jpeg";
-import drink8 from "../assets/8Drinks.jpeg";
+import nextpgdrink from "../assets/nextpgdrink.jpeg";
 
-const drinks = [
-  { id: 1, src: drink1, name: "Saugvignon Blanc 2ml | $6 Bottle | $60" },
-  { id: 2, src: drink2, name: "Carbanet sauvignon 120ml | $33.9" },
-  { id: 3, src: drink3, name: "Chardonay 125ml | $6" },
-  { id: 4, src: drink4, name: "Aperol spritz 500ml | $6" },
-  { id: 5, src: drink5, name: "Dry Martin 80ml | $12.8" },
-  { id: 6, src: drink6, name: "Whisky 50ml | $6 Bottle | $70" },
-  { id: 7, src: drink8, name: "Sparkling Water 50ml | $1.5" },
+
+const drinksData = [
+  { name: "Sauvignon Blanc", img: "/images/Drinks1.jpeg", prices: ["125 ml $6", "Bottle $28"] },
+  { name: "Calvet Prestige Bordeaux", img: "/images/Drinks2.jpeg", prices: ["125 ml $8", "Bottle $35"] },
+  { name: "Chardonnay", img: "/images/Drinks3.jpeg", prices: ["125 ml $8"] },
+  { name: "Aperol Spritz", img: "/images/Drinks4.jpeg", prices: ["125 ml $8"] },
+  { name: "Dry Martini", img: "/images/Drinks5.jpeg", prices: ["125 ml $8"] },
+  { name: "Whisky", img: "/images/Drinks6.jpeg", prices: ["125 ml $8"] },
+  { name: "Sparkling Water", img: "/images/Drinks7.jpeg", prices: ["125 ml $8"] },
 ];
 
-const Drinks: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 py-8" id="drinks">
-      <div className="container mx-auto flex flex-col gap-8 px-4">
-        {drinks.map((drink) => (
-          <div
-            key={drink.id}
-            className="flex flex-col md:flex-row items-center justify-between bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
-          >
-            <div className="min-h-screen flex items-center justify-center bg-gray-100">
-              <h1 className="text-3xl font-bold text-purple-600">Drinks</h1>
-               </div>
-            {/* Text on the left */}
-            <div className="flex-1 p-6">
-              <h2 className="text-xl font-semibold text-gray-800">{drink.name}</h2>
-            </div>
+const DrinksSection: React.FC = () => {
 
-            {/* Image on the right */}
-            <div className="w-full md:w-1/3 h-64 md:h-48">
-              <img
-                src={drink.src}
-                alt={drink.name}
-                className="w-full h-full object-cover"
-              />
+  const scrollToText = () => {
+    const element = document.getElementById("text");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div id="drinks" className="w-full bg-black text-white py-16 px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      
+        <div>
+          <p className="uppercase tracking-widest text-sm text-gray-400">Drinks</p>
+          <h2 className="text-4xl font-semibold mt-4 leading-snug">
+            Browse our wine and <br /> spirits stock online, or <br /> visit one of our stores.
+          </h2>
+          <button
+            className="mt-8 border border-gray-600 px-6 py-3 rounded-md hover:bg-gray-800 transition"
+            onClick={scrollToText} // <-- Smooth scroll to paragraph
+          >
+            Explore <span className="ml-2">▼</span>
+          </button>
+        </div>
+        
+        <div id="drinks-list" className="grid grid-cols-1 gap-6">
+          {drinksData.map((drink, index) => (
+            <div key={index} className="relative rounded-lg overflow-hidden shadow-lg">
+              <img src={drink.img} alt={drink.name} className="w-full h-64 object-cover" />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4">
+                <h3 className="text-xl font-semibold">{drink.name}</h3>
+                <div className="flex gap-4 mt-2">
+                  {drink.prices.map((price, idx) => (
+                    <span key={idx} className="bg-gray-800 px-3 py-1 rounded text-sm">
+                      {price}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
+      
+<div
+  className="relative h-[600px] w-full mt-90 max-w-[400px] mx-auto bg-center bg-cover flex flex-col justify-center items-center text-white transition-transform duration-500 hover:scale-105 overflow-visible"
+  style={{ backgroundImage: `url(${nextpgdrink})` }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/40" />
+
+  {/* Text that overflows horizontally */}
+<p
+  id="text"
+  className="absolute left-1/2 -translate-x-1/2 text-3xl font-bold text-white text-center w-[800px] leading-snug"
+>
+  With its relaxed and intimate atmosphere, <span className="font-bold text-gray-500">
+  it is the ideal setting for any occasion,
+</span>
+  whether it is a romantic meal for two, a dinner with friends, or a lively celebration
+  you have in mind.
+</p>
+</div>
+
+
+
+
+
     </div>
   );
 };
 
-export default Drinks;
+export default DrinksSection;

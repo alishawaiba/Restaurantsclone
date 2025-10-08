@@ -10,10 +10,10 @@ export default function Meals() {
       className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white" id="Menu"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      {/* Overlay */}
+    
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
+      
       <div className="relative z-10 text-center px-6">
         <h1 className="text-6xl font-bold mb-6">Meals</h1>
         <p className="text-lg max-w-2xl mx-auto mb-8">

@@ -11,21 +11,28 @@ import Mealexplore3 from "../assets/Mealexplore3.jpg";
 
 export default function Menu() {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    speed: 1000,
+    slidesToShow: 3, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 }
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 1 }
+      }
+    ]
   };
 
   return (
     <div className="w-full">
+      {/* Hero Section */}
       <div
         id="menu-hero"
         className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white"
@@ -35,7 +42,7 @@ export default function Menu() {
         <div className="relative z-10 text-center">
           <h1 className="text-6xl font-bold mb-6">Meal</h1>
           <a
-            href="#Menu-section"
+            href="#menu-section"
             className="px-10 py-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200 transition inline-block"
           >
             Explore Menu
@@ -43,26 +50,24 @@ export default function Menu() {
         </div>
       </div>
 
-      {/* Menu Section */}
-      <div id="Menu-section" className="w-full min-h-screen bg-gray-100 p-8">
-        <Slider {...settings}>
-          {[
-            Mealexplore1,
-            Mealexplore2,
-            Mealexplore3,
-            Mealexplore1,
-            Mealexplore2,
-            Mealexplore3,
-          ].map((img, index) => (
-            <div key={index}>
-              <img
-                src={img}
-                alt={`Gallery ${index + 1}`}
-                className="w-full h-64 object-cover rounded-lg shadow-lg"
-              />
-            </div>
-          ))}
-        </Slider>
+      
+      <div
+        id="menu-section"
+        className="w-full min-h-screen bg-gray-100 p-8 mt-12"
+      >
+        <div className="w-full max-w-6xl mx-auto"> {/* centered container */}
+          <Slider {...settings}>
+            {[Mealexplore1, Mealexplore2, Mealexplore3, Mealexplore1, Mealexplore2, Mealexplore3].map((img, index) => (
+              <div key={index} className="px-3"> {/* gap between slides */}
+                <img
+                  src={img}
+                  alt={`Meal ${index + 1}`}
+                  className="w-full h-96 object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );

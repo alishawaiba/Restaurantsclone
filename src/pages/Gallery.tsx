@@ -8,7 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Gallery() {
-  // Function for smooth scroll
+
+  // Scrolls smoothly to gallery section
   const scrollToGallery = () => {
     const section = document.getElementById("gallery-section");
     if (section) {
@@ -16,9 +17,9 @@ export default function Gallery() {
     }
   };
 
-  // Slick settings
+  // React Slick settings
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3, 
@@ -38,17 +39,18 @@ export default function Gallery() {
   };
 
   return (
-    <div className="w-full">
-      {/* Hero Section */}
+    <div className="w-full mt-5">
+      
+      {/* === HERO SECTION === */}
       <div
         id="gallery-hero"
         className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white transition-transform duration-500 hover:scale-105"
         style={{ backgroundImage: `url(${bgImg})` }}
       >
-        {/* Dark overlay */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Centered content */}
+        {/* Text Content */}
         <div className="absolute z-10 text-center px-4 animate-fadeIn">
           <h1 className="text-5xl font-bold mb-4">Our Gallery</h1>
           <p className="text-lg max-w-2xl mx-auto">
@@ -57,7 +59,7 @@ export default function Gallery() {
         </div>
 
         {/* Explore Button */}
-        <div id="gallery-hero" className="absolute bottom-12 z-10">
+        <div className="absolute bottom-12 z-10">
           <button
             onClick={scrollToGallery}
             className="px-8 py-3 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200 transition"
@@ -67,28 +69,56 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Gallery Section */}
-      <div id="gallery-hero" className="w-full min-h-screen bg-gray-100 p-8">
+      {/* === GALLERY SECTION === */}
+      <div
+        id="gallery-section"
+        className="w-full min-h-screen bg-gray-100 p-8 mt-10"
+      >
+        <h2 className="text-3xl font-bold text-center mb-10"></h2>
+
         <Slider {...settings}>
           <div>
-            <img src={galleryexplore1} alt="Gallery 1" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore1}
+              alt="Gallery 1"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
-            <img src={galleryexplore2} alt="Gallery 2" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore2}
+              alt="Gallery 2"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
-            <img src={galleryexplore3} alt="Gallery 3" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore3}
+              alt="Gallery 3"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
-            <img src={galleryexplore1} alt="Gallery 4" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore1}
+              alt="Gallery 4"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
-            <img src={galleryexplore2} alt="Gallery 5" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore2}
+              alt="Gallery 5"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
-            <img src={galleryexplore3} alt="Gallery 6" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img
+              src={galleryexplore3}
+              alt="Gallery 6"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
           </div>
-          {/* Add more images here */}
         </Slider>
       </div>
     </div>

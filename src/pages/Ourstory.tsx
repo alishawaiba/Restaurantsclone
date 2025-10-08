@@ -10,10 +10,10 @@ export default function OurStory() {
       className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white" id="ourstory"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      {/* Overlay */}
+    
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
+      
       <div className="relative z-10 text-center px-6">
         <h1 className="text-6xl font-bold mb-6">Our Story</h1>
         <p className="text-lg max-w-2xl mx-auto mb-8">
@@ -97,7 +97,7 @@ export default function OurStory() {
       </span>
    </div>
    <div className="relative h-screen w-full mt-30">
-      {/* Background video/image */}
+  
       <video
         src={OurStoryVideo}
         autoPlay
@@ -108,14 +108,14 @@ export default function OurStory() {
       />
 
    <div className="relative  z-10 flex justify-center items-center h-full gap-12 px-6">
-        {/* Card 1 */}
-        <div className="w-64 h-72 flex flex-col bg-white/20 justify-center items-center text-black backdrop-blur-md rounded-md shadow-lg">
+        
+        <div className="w-64 h-72 cursor-pointer flex flex-col bg-white/20 justify-center items-center text-black backdrop-blur-md rounded-md shadow-lg">
           <p className="uppercase text-sm tracking-widest">Open</p>
-          <h2 className="text-4xl font-bold my-4">12</h2>
+          <h2 className="text-4xl font-bold my-4  ">12</h2>
           <p className="uppercase text-sm tracking-widest">Restaurants</p>
         </div>
               <div className="relative z-10 flex justify-center items-center h-full gap-12 px-6">
-        {/* Card 1 */}
+        
         <div className="w-64 h-72 flex flex-col justify-center items-center text-black bg-white/20 backdrop-blur-md rounded-md shadow-lg">
           <p className="uppercase text-sm tracking-widest">Since</p>
           <p className="text-4xl font-bold my-4">1980</p>
@@ -123,7 +123,7 @@ export default function OurStory() {
         </div>
 <div className="w-64 h-72 flex flex-col justify-center items-center text-black bg-white/20 backdrop-blur-md rounded-md shadow-lg">
           <p className="uppercase text-sm tracking-widest">Daily</p>
-          <p className="text-4xl font-bold my-4">400</p>
+          <p className="text-4xl font-bold my-4">+400</p>
           <p className="uppercase text-sm tracking-widest">Customers</p>
         </div>
     </div>

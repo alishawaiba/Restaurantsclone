@@ -1,7 +1,7 @@
 import React from "react";
 
 const Restaurants: React.FC = () => {
-  // Text lines with their custom styles
+  
   const lines = [
     { text: "Delicious food in a pleasant atmosphere", className: "text-2xl md:text-3xl font-semibold text-gray-800" },
     { text: "Fresh", className: "text-3xl md:text-4xl font-bold text-purple-500 uppercase tracking-wider" },
@@ -17,12 +17,12 @@ const Restaurants: React.FC = () => {
 
   return (
     <div className="relative h-screen w-full flex flex-col justify-center items-center bg-gray-400 px-6 overflow-hidden" id="restaurants">
-      {/* Page Title */}
+      
       <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-center text-purple-600 tracking-wide">
         Restaurants
       </h1>
 
-      {/* Animated Text Lines */}
+  
       <div className="text-center space-y-4">
         {lines.map((line, index) => (
           <p
@@ -35,7 +35,7 @@ const Restaurants: React.FC = () => {
         ))}
       </div>
 
-      {/* Tailwind CSS custom animation */}
+    
       <style>
         {`
           @keyframes fadeIn {
