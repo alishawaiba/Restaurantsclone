@@ -1,1 +1,26 @@
 @import "tailwindcss";
+@keyframes blink {
+0%, 100%{opacity:1;}
+50% {opacity: 0.3;}
+}
+@keyframes slide-in {
+    0%{
+        transform: translateY(60px);
+        Opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+    .animate-slide-in a{
+        animation: slide-in 1.5s ease-out forwards;
+}
+.animate-fade-in a{
+    animation:fadeIn 2s ease-out;
+}
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+

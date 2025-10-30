@@ -1,42 +1,61 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Drinks from "./pages/Drinks";
-import Menu from "./pages/Menu";
-import Gallery from "./pages/Gallery";
-import Reservation from "./pages/Reservation";
-import Contact from "./pages/Contact";
-import Restaurants from "./pages/Restaurants";
+import { useState, useEffect } from "react";
+import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
+import Preloader from "./pages/preloader";
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import Drinks from "./pages/Drinks";
 import OurStory from "./pages/Ourstory";
+import Restaurants from "./pages/Restaurants";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import Offer from "./pages/Offer";
-import Navbar from "./components/navbar"; 
-import Hero from "./components/hero/Hero";
 
+const App = () => {
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [showMainContent, setShowMainContent] = useState(false);
 
+  useEffect(() => {
+    
+    const preloaderTimer = setTimeout(() => {
+      setShowPreloader(false);
+    }, 4000);
 
-function App() {
+  
+    const mainContentTimer = setTimeout(() => {
+      setShowMainContent(true);
+    }, 4500); 
+
+    return () => {
+      clearTimeout(preloaderTimer);
+      clearTimeout(mainContentTimer);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-grow">
-       
+    <>
+      {showPreloader && <Preloader />}
+      
+      {showMainContent && (
+        <>
           <Navbar />
-          <Home/>
-         <Menu/>
-         <Drinks/>
-         <Offer/>
-         <OurStory/>
-         <Reservation/>
-         <Contact/>
-         <Gallery/>
-         <Restaurants/>
-         
-         
-         
-
-      </div>
-      <Footer />
-    </div>
+          
+          <div className="animate-fade-in">
+            <Home />
+            <Menu />
+            <Drinks />
+            <Offer />
+            <OurStory />
+            <Restaurants />
+            <Gallery />
+            <Contact />
+          </div>
+          
+          <Footer />
+        </>
+      )}
+    </>
   );
-}
+};
 
 export default App;

@@ -16,7 +16,7 @@ const Restaurants: React.FC = () => {
   ];
 
   return (
-    <div className="relative h-screen w-full flex flex-col justify-center items-center bg-gray-400 px-6 overflow-hidden" id="restaurants">
+    <div className="relative [h-900px] w-full mt-[1px] flex flex-col justify-center items-center mb-4 bg-gray-400 px-6 overflow-hidden" id="restaurants">
       
       <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-center text-purple-600 tracking-wide">
         Restaurants

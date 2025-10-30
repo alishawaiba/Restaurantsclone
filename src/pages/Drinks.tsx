@@ -1,52 +1,45 @@
 import React from "react";
 import nextpgdrink from "../assets/nextpgdrink.jpeg";
-
-
-const drinksData = [
-  { name: "Sauvignon Blanc", img: "/images/Drinks1.jpeg", prices: ["125 ml $6", "Bottle $28"] },
-  { name: "Calvet Prestige Bordeaux", img: "/images/Drinks2.jpeg", prices: ["125 ml $8", "Bottle $35"] },
-  { name: "Chardonnay", img: "/images/Drinks3.jpeg", prices: ["125 ml $8"] },
-  { name: "Aperol Spritz", img: "/images/Drinks4.jpeg", prices: ["125 ml $8"] },
-  { name: "Dry Martini", img: "/images/Drinks5.jpeg", prices: ["125 ml $8"] },
-  { name: "Whisky", img: "/images/Drinks6.jpeg", prices: ["125 ml $8"] },
-  { name: "Sparkling Water", img: "/images/Drinks7.jpeg", prices: ["125 ml $8"] },
-];
+import { drinksData } from "../constant/drinksSection";
 
 const DrinksSection: React.FC = () => {
-
-  const scrollToText = () => {
-    const element = document.getElementById("text");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div id="drinks" className="w-full bg-black text-white py-16 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-      
-        <div>
-          <p className="uppercase tracking-widest text-sm text-gray-400">Drinks</p>
+    <section id="drinks" className="w-full text-white bg-black">
+      <div className="max-w-7xl mx-auto py-16 px-4 md:px-8 flex flex-col md:flex-row gap-10">
+
+        {/* Left Text */}
+        <div className="md:w-1/2 flex flex-col justify-center">
+          <p className="uppercase tracking-widest text-sm text-gray-300">Drinks</p>
           <h2 className="text-4xl font-semibold mt-4 leading-snug">
             Browse our wine and <br /> spirits stock online, or <br /> visit one of our stores.
           </h2>
-          <button
-            className="mt-8 border border-gray-600 px-6 py-3 rounded-md hover:bg-gray-800 transition"
-            onClick={scrollToText} // <-- Smooth scroll to paragraph
-          >
-            Explore <span className="ml-2">▼</span>
-          </button>
         </div>
-        
-        <div id="drinks-list" className="grid grid-cols-1 gap-6">
-          {drinksData.map((drink, index) => (
-            <div key={index} className="relative rounded-lg overflow-hidden shadow-lg">
-              <img src={drink.img} alt={drink.name} className="w-full h-64 object-cover" />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4">
+
+        {/* Right Grid */}
+        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {drinksData.map((drink) => (
+            <div
+              key={drink.id}
+              className="relative rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] bg-gray-900/50"
+            >
+              {/* Drink Image */}
+              <div className="w-full aspect-[4/3] overflow-hidden">
+                <img
+                  src={drink.image}
+                  alt={drink.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Drink Info */}
+              <div className="p-4 flex flex-col gap-2">
                 <h3 className="text-xl font-semibold">{drink.name}</h3>
-                <div className="flex gap-4 mt-2">
+                <div className="flex gap-2 flex-wrap">
                   {drink.prices.map((price, idx) => (
-                    <span key={idx} className="bg-gray-800 px-3 py-1 rounded text-sm">
+                    <span
+                      key={idx}
+                      className="bg-gray-800 text-gray-200 px-3 py-1 rounded text-sm font-medium"
+                    >
                       {price}
                     </span>
                   ))}
@@ -57,32 +50,21 @@ const DrinksSection: React.FC = () => {
         </div>
       </div>
 
-      
-<div
-  className="relative h-[600px] w-full mt-90 max-w-[400px] mx-auto bg-center bg-cover flex flex-col justify-center items-center text-white transition-transform duration-500 hover:scale-105 overflow-visible"
-  style={{ backgroundImage: `url(${nextpgdrink})` }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/40" />
-
-  {/* Text that overflows horizontally */}
-<p
-  id="text"
-  className="absolute left-1/2 -translate-x-1/2 text-3xl font-bold text-white text-center w-[800px] leading-snug"
->
-  With its relaxed and intimate atmosphere, <span className="font-bold text-gray-500">
-  it is the ideal setting for any occasion,
-</span>
-  whether it is a romantic meal for two, a dinner with friends, or a lively celebration
-  you have in mind.
-</p>
-</div>
-
-
-
-
-
-    </div>
+      {/* Bottom Background Section */}
+      <div
+        className="relative h-[600px] w-full mt-16 flex justify-center items-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: `url(${nextpgdrink})` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <p className="relative z-10 text-3xl md:text-4xl font-bold text-center max-w-3xl leading-snug px-4 text-white">
+          With its relaxed and intimate atmosphere,{" "}
+          <span className="text-gray-400">
+            it is the ideal setting for any occasion,
+          </span>{" "}
+          whether it is a romantic meal for two, a dinner with friends, or a lively celebration you have in mind.
+        </p>
+      </div>
+    </section>
   );
 };
 

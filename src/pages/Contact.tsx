@@ -73,6 +73,7 @@ const Contact: React.FC = () => {
           <h2 className="text-5xl font-bold mb-12 text-purple-500 drop-shadow-lg">
             Contact Us
           </h2>
+          
 
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
@@ -104,7 +105,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col items-start">
           <h1 className="text-gray-500 text-lg">Sunday</h1>
           <h2 className="text-4xl font-bold">12 p.m. - 10 p.m.</h2>
-          <h3 className="text-gray-500">12 p.m. - 10 p.m.</h3>
+          <h3 className="text-gray-500">You are welcomed</h3>
         </div>
       </div>
     </div>

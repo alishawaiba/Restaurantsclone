@@ -53,7 +53,7 @@ export default function Menu() {
       
       <div
         id="menu-section"
-        className="w-full min-h-screen bg-gray-100 p-8 mt-12"
+        className="w-full  bg-gray-100 p-8 mt-12"
       >
         <div className="w-full max-w-6xl mx-auto"> {/* centered container */}
           <Slider {...settings}>

@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Gallery() {
 
-  // Scrolls smoothly to gallery section
+  
   const scrollToGallery = () => {
     const section = document.getElementById("gallery-section");
     if (section) {
@@ -17,7 +17,7 @@ export default function Gallery() {
     }
   };
 
-  // React Slick settings
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -72,7 +72,7 @@ export default function Gallery() {
       {/* === GALLERY SECTION === */}
       <div
         id="gallery-section"
-        className="w-full min-h-screen bg-gray-100 p-8 mt-10"
+        className="w-full  bg-gray-100 p-8 mt-10"
       >
         <h2 className="text-3xl font-bold text-center mb-10"></h2>
 
