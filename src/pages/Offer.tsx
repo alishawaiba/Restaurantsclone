@@ -11,7 +11,7 @@ import CheeseCake from "../assets/CheeseCake.jpg";
 import Pastries from "../assets/Pastries.jpg";
 
 
-import SteaksImg from "../assets/steaks.jpg"; // cover image
+import SteaksImg from "../assets/steaks.jpg"; 
 import FilletSteaks from "../assets/FilletSteaks.jpg";
 import FlanksSteaks from "../assets/FlanksSteaks.jpg";
 
@@ -26,21 +26,21 @@ const offers = [
   { title: "Browse our stock online with over 30 wines", category: "WINES", image: Offer3 },
 ];
 
-// Dessert items
+
 const desserts = [
   { id: 1, name: "Brownie", image: Brownie, price: "$5.99" },
   { id: 2, name: "Cheesecake", image: CheeseCake, price: "$6.99" },
   { id: 3, name: "Pastries", image: Pastries, price: "$4.49" },
 ];
 
-// Steak items
+
 const steaks = [
   { id: 1, name: "Steaks", image: SteaksImg, price: "225g | $19" },
   { id: 2, name: "FileSteaks", image: FilletSteaks, price: "280g | $14" },
   { id: 3, name: "FlankSteaks", image: FlanksSteaks, price: "z | $22" },
 ];
 
-// Wine items
+
 const wines = [
   { id: 1, name: "Sauvignon Blanc", image: Wine1, price: "$15.00" },
   { id: 2, name: "Cabernet Sauvignon", image: Wine2, price: "$18.00" },
@@ -50,7 +50,7 @@ const wines = [
 export default function OfferDropdown() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  // Returns the items based on the category
+  
   const getItems = (category: string) => {
     if (category === "DESSERTS") return desserts;
     if (category === "STEAKS") return steaks;
@@ -60,7 +60,7 @@ export default function OfferDropdown() {
 
   return (
     <div className="w-full bg-black py-10" id="offer">
-      {/* Offers Section */}
+      
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
         {offers.map((offer, index) => (
           <div key={index} className="relative rounded-xl overflow-hidden group shadow-lg">
@@ -84,7 +84,7 @@ export default function OfferDropdown() {
         ))}
       </div>
 
-      {/* Explore Section */}
+      
       {activeCategory && (
         <div className="w-full bg-black text-white py-16 px-8 flex flex-col md:flex-row justify-center gap-6">
           {getItems(activeCategory).map((item) => (

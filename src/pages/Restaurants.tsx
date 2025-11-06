@@ -1,7 +1,6 @@
 import React from "react";
 
 const Restaurants: React.FC = () => {
-  
   const lines = [
     { text: "Delicious food in a pleasant atmosphere", className: "text-2xl md:text-3xl font-semibold text-gray-800" },
     { text: "Fresh", className: "text-3xl md:text-4xl font-bold text-purple-500 uppercase tracking-wider" },
@@ -16,26 +15,31 @@ const Restaurants: React.FC = () => {
   ];
 
   return (
-    <div className="relative [h-900px] w-full mt-[1px] flex flex-col justify-center items-center mb-4 bg-gray-400 px-6 overflow-hidden" id="restaurants">
-      
-      <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-center text-purple-600 tracking-wide">
+    <div className="relative mt-5 w-full flex flex-col m justify-center items-center  bg-gray-400 overflow-hidden" id="restaurants">
+      <h1 className="text-5xl mt-4 md:text-6xl font-extrabold mb-10 text-center text-purple-600 tracking-wide">
         Restaurants
       </h1>
 
-  
       <div className="text-center space-y-4">
         {lines.map((line, index) => (
           <p
             key={index}
-            className={`${line.className} opacity-0 animate-fadeIn`}
-            style={{ animationDelay: `${index * 0.3}s`, animationFillMode: "forwards" }}
+            className={`
+              ${line.className} 
+              opacity-0 animate-fadeIn 
+              transition-transform duration-500 ease-in-out 
+              hover:scale-105 hover:text-purple-700 hover:-translate-y-2
+            `}
+            style={{
+              animationDelay: `${index * 0.3}s`,
+              animationFillMode: "forwards",
+            }}
           >
             {line.text}
           </p>
         ))}
       </div>
 
-    
       <style>
         {`
           @keyframes fadeIn {

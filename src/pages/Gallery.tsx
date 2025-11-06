@@ -69,7 +69,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* === GALLERY SECTION === */}
+      
       <div
         id="gallery-section"
         className="w-full  bg-gray-100 p-8 mt-10"

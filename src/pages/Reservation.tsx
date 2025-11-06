@@ -1,49 +1,146 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Reservation = () => {
-  const [data, setData] = useState({
+const Reservation: React.FC = () => {
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    guests: 1,
+    guests: "1",
     date: "",
-    time: ""
+    time: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Reservation Data:", data);
-    alert("Reservation submitted!");
+    console.log("Reservation Details:", formData);
+    alert("Your table has been reserved successfully!");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      guests: "1",
+      date: "",
+      time: "",
+    });
   };
 
   return (
-    <div className="max-w-md mx-auto mt-70 p-6 bg-white rounded-xl shadow-md" id="book">
-      <h2 className="text-2xl font-bold mb-4 text-center text-purple-600">Book a Table</h2>
-      <form onSubmit={handleSubmit} className="space-y-3">
-        {["name","email","phone"].map((field) => (
-          <input
-            key={field}
-            type={field==="email"?"email":field==="phone"?"tel":"text"}
-            name={field}
-            placeholder={field.charAt(0).toUpperCase()+field.slice(1)}
-            value={data[field as keyof typeof data]}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
-          />
-        ))}
-        <select name="guests" value={data.guests} onChange={handleChange} className="w-full px-4 py-2 border rounded-lg">
-          {[1,2,3,4,5,6,7,8,9,10].map(n=><option key={n}>{n}</option>)}
-        </select>
-        <input type="date" name="date" value={data.date} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg"/>
-        <input type="time" name="time" value={data.time} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg"/>
-        <button className="w-full py-2 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition">Reserve</button>
-      </form>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-purple-100 to-white p-4 relative">
+      {/* Close Button */}
+      <button
+        className="absolute top-4 left-4 text-gray-600 hover:text-gray-900 transition"
+        onClick={() => window.history.back()}
+      >
       
+      </button>
+
+      
+      <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md text-center border border-gray-200">
+        <h2 className="text-3xl font-semibold text-purple-700 mb-6">
+          Book a Table
+        </h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4 text-left">
+        
+          <div>
+            <label className="block text-gray-700 mb-1">Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+    
+          <div>
+            <label className="block text-gray-700 mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+        
+          <div>
+            <label className="block text-gray-700 mb-1">Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+      
+          <div>
+            <label className="block text-gray-700 mb-1">Number of Guests</label>
+            <select
+              name="guests"
+              value={formData.guests}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            >
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5+">5+ Guests</option>
+            </select>
+          </div>
+
+          
+          <div>
+            <label className="block text-gray-700 mb-1">Date</label>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+          
+          <div>
+            <label className="block text-gray-700 mb-1">Time</label>
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+      
+          <button
+            type="submit"
+            className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all"
+          >
+            Confirm Reservation
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

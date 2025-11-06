@@ -6,8 +6,7 @@ const DrinksSection: React.FC = () => {
   return (
     <section id="drinks" className="w-full text-white bg-black">
       <div className="max-w-7xl mx-auto py-16 px-4 md:px-8 flex flex-col md:flex-row gap-10">
-
-        {/* Left Text */}
+        {/* Left Side Text */}
         <div className="md:w-1/2 flex flex-col justify-center">
           <p className="uppercase tracking-widest text-sm text-gray-300">Drinks</p>
           <h2 className="text-4xl font-semibold mt-4 leading-snug">
@@ -15,14 +14,14 @@ const DrinksSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Right Grid */}
-        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Right Side Drinks List (now vertical) */}
+        <div className="md:w-1/2 flex flex-col gap-6">
           {drinksData.map((drink) => (
             <div
               key={drink.id}
               className="relative rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] bg-gray-900/50"
             >
-              {/* Drink Image */}
+              {/* Image */}
               <div className="w-full aspect-[4/3] overflow-hidden">
                 <img
                   src={drink.image}
@@ -31,7 +30,7 @@ const DrinksSection: React.FC = () => {
                 />
               </div>
 
-              {/* Drink Info */}
+              {/* Text Info */}
               <div className="p-4 flex flex-col gap-2">
                 <h3 className="text-xl font-semibold">{drink.name}</h3>
                 <div className="flex gap-2 flex-wrap">
@@ -50,7 +49,7 @@ const DrinksSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Background Section */}
+      {/* Background Section */}
       <div
         className="relative h-[600px] w-full mt-16 flex justify-center items-center bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${nextpgdrink})` }}

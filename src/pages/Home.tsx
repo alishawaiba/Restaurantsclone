@@ -9,9 +9,8 @@ const Home = () => {
 
   return (
     <div id="home" className="relative w-full h-screen overflow-hidden">
-    
       
-
+      
       
       <video
         src={bgvideo} 
@@ -28,5 +27,5 @@ const Home = () => {
     </div>
   );
 };
-
+      
 export default Home;
