@@ -5,13 +5,12 @@ const Footer: React.FC = () => {
   return (
     <footer
       className="relative text-white py-16 px-6 mt-5 bg-center bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${bgImage})`  }}
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
-      
       <div className="absolute inset-0 bg-black/50"></div>
 
-      
       <div className="relative max-w-6xl mx-auto text-center space-y-6">
+
         
         <div className="flex flex-wrap justify-center gap-4 font-medium">
           {["Home", "Menu", "Drinks", "Ourstory", "Restaurants", "Gallery", "Contact"].map(
@@ -27,56 +26,14 @@ const Footer: React.FC = () => {
           )}
         </div>
 
-      
+        
         <div>
           <h2 className="text-xl md:text-2xl font-bold">Book a Table</h2>
         </div>
 
         
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
-          {[
-            "Home2",
-            "Home3",
-            "Menu2",
-            "Menu3",
-            "Drinks2",
-            "Drinks3",
-            "Restaurant2",
-            "Restaurant3",
-          ].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-purple-300 transition"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-      
-        <div className="flex flex-wrap justify-center gap-4 text-xs md:text-sm">
-          {[
-            "Menu CMS Page",
-            "Meal CMS Page",
-            "Drink CMS Page",
-            "Restaurant CMS Page",
-            "Licencing",
-            "Instructors",
-            "Changelog",
-            "Sample Page",
-          ].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              className="hover:text-purple-300 transition"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-      
+        
+        
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           <button className="px-4 py-2 rounded-2xl border border-white bg-white/20 hover:bg-white/30 transition text-sm">
             Powered by CloudNepalWeb

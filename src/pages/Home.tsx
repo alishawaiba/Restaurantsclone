@@ -1,19 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";   
-import Navbar from "../components/navbar";
+import Navbar from "../components/navbar";         
 import Hero from "../components/hero/Hero";
-import bgvideo from "../assets/res.mp4"; 
-import Reservation from "./Reservation";
+import bgvideo from "../assets/res.mp4";
 
 const Home = () => {
-
   return (
     <div id="home" className="relative w-full h-screen overflow-hidden">
       
-      
-      
+  
       <video
-        src={bgvideo} 
+        src={bgvideo}
         autoPlay
         loop
         muted
@@ -21,11 +17,13 @@ const Home = () => {
         className="absolute inset-0 w-full h-full object-cover -z-10"
       />
 
+  
+     
+
       
       <Hero />
-      
     </div>
   );
 };
-      
+
 export default Home;

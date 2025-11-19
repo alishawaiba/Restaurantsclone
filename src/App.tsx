@@ -1,61 +1,42 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
+
 import Preloader from "./pages/preloader";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Drinks from "./pages/Drinks";
-import OurStory from "./pages/Ourstory";
+import Ourstory from "./pages/Ourstory";
 import Restaurants from "./pages/Restaurants";
 import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
-import Offer from "./pages/Offer";
 
-const App = () => {
-  const [showPreloader, setShowPreloader] = useState(true);
-  const [showMainContent, setShowMainContent] = useState(false);
+export default function App(): JSX.Element {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    
-    const preloaderTimer = setTimeout(() => {
-      setShowPreloader(false);
-    }, 4000);
-
-  
-    const mainContentTimer = setTimeout(() => {
-      setShowMainContent(true);
-    }, 4500); 
-
-    return () => {
-      clearTimeout(preloaderTimer);
-      clearTimeout(mainContentTimer);
-    };
+    const t = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(t);
   }, []);
 
-  return (
-    <>
-      {showPreloader && <Preloader />}
-      
-      {showMainContent && (
-        <>
-          <Navbar />
-          
-          <div className="animate-fade-in">
-            <Home />
-            <Menu />
-            <Drinks />
-            <Offer />
-            <OurStory />
-            <Restaurants />
-            <Gallery />
-            <Contact />
-          </div>
-          
-          <Footer />
-        </>
-      )}
-    </>
-  );
-};
+  if (isLoading) {
+    return <Preloader />;
+  }
 
-export default App;
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <Navbar />
+
+      <main>
+        <Home />
+        <Menu />
+        <Drinks />
+        <Ourstory />
+        <Restaurants />
+        <Gallery />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

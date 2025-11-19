@@ -32,7 +32,7 @@ export default function Menu() {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
+      
       <div
         id="menu-hero"
         className="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white"

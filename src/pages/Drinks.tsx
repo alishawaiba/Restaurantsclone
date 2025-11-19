@@ -5,23 +5,30 @@ import { drinksData } from "../constant/drinksSection";
 const DrinksSection: React.FC = () => {
   return (
     <section id="drinks" className="w-full text-white bg-black">
+      
+    
       <div className="max-w-7xl mx-auto py-16 px-4 md:px-8 flex flex-col md:flex-row gap-10">
-        {/* Left Side Text */}
+
+      
         <div className="md:w-1/2 flex flex-col justify-center">
-          <p className="uppercase tracking-widest text-sm text-gray-300">Drinks</p>
+          <p className="uppercase tracking-widest text-sm text-gray-300">
+            Drinks
+          </p>
+
           <h2 className="text-4xl font-semibold mt-4 leading-snug">
             Browse our wine and <br /> spirits stock online, or <br /> visit one of our stores.
           </h2>
         </div>
 
-        {/* Right Side Drinks List (now vertical) */}
+      
         <div className="md:w-1/2 flex flex-col gap-6">
           {drinksData.map((drink) => (
             <div
               key={drink.id}
-              className="relative rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] bg-gray-900/50"
+              className="relative rounded-lg shadow-lg overflow-hidden bg-gray-900/50 transition hover:scale-[1.02] duration-300"
             >
-              {/* Image */}
+              
+          
               <div className="w-full aspect-[4/3] overflow-hidden">
                 <img
                   src={drink.image}
@@ -30,13 +37,14 @@ const DrinksSection: React.FC = () => {
                 />
               </div>
 
-              {/* Text Info */}
+              {/* DRINK DETAILS */}
               <div className="p-4 flex flex-col gap-2">
                 <h3 className="text-xl font-semibold">{drink.name}</h3>
+
                 <div className="flex gap-2 flex-wrap">
-                  {drink.prices.map((price, idx) => (
+                  {drink.prices.map((price, index) => (
                     <span
-                      key={idx}
+                      key={index}
                       className="bg-gray-800 text-gray-200 px-3 py-1 rounded text-sm font-medium"
                     >
                       {price}
@@ -44,18 +52,21 @@ const DrinksSection: React.FC = () => {
                   ))}
                 </div>
               </div>
+
             </div>
           ))}
         </div>
       </div>
 
-      {/* Background Section */}
+      
       <div
-        className="relative h-[600px] w-full mt-16 flex justify-center items-center bg-fixed bg-center bg-cover"
+        className="relative h-[600px] w-full mt-16 flex justify-center items-center 
+        bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${nextpgdrink})` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <p className="relative z-10 text-3xl md:text-4xl font-bold text-center max-w-3xl leading-snug px-4 text-white">
+
+        <p className="relative z-10 text-3xl md:text-4xl font-bold text-center max-w-3xl px-4 leading-snug text-white">
           With its relaxed and intimate atmosphere,{" "}
           <span className="text-gray-400">
             it is the ideal setting for any occasion,
@@ -63,6 +74,7 @@ const DrinksSection: React.FC = () => {
           whether it is a romantic meal for two, a dinner with friends, or a lively celebration you have in mind.
         </p>
       </div>
+
     </section>
   );
 };
