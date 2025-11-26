@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/hero/Footer";
 
 import Preloader from "./pages/preloader";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Drinks from "./pages/Drinks";
+import Offer from  "./pages/Offer";
+import Contact from "./pages/Contact";
 import Ourstory from "./pages/Ourstory";
 import Restaurants from "./pages/Restaurants";
+import Reservation from  "./pages/Reservation";
 import Gallery from "./pages/Gallery";
 
 export default function App(): JSX.Element {
@@ -31,8 +34,12 @@ export default function App(): JSX.Element {
         <Home />
         <Menu />
         <Drinks />
+        <Menu/>
+        <Offer />
+        <Contact/>
         <Ourstory />
         <Restaurants />
+        <Reservation />
         <Gallery />
       </main>
 

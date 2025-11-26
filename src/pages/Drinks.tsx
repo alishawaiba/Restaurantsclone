@@ -29,7 +29,7 @@ const DrinksSection: React.FC = () => {
             >
               
           
-              <div className="w-full aspect-[4/3] overflow-hidden">
+              <div className="w-full  overflow-hidden">
                 <img
                   src={drink.image}
                   alt={drink.name}
@@ -37,7 +37,7 @@ const DrinksSection: React.FC = () => {
                 />
               </div>
 
-              {/* DRINK DETAILS */}
+              
               <div className="p-4 flex flex-col gap-2">
                 <h3 className="text-xl font-semibold">{drink.name}</h3>
 

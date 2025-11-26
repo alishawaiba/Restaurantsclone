@@ -1,33 +1,41 @@
-import {useEffect, useState} from "react";
-import bgimage from "../assets/Preloaderimage.jpeg";
+import React, { useEffect, useState } from "react";
+import { preloaderData } from "../constant/preloaderSection";
 
 const Preloader = () => {
-    const [isVisible, setIsVisible] = useState(true);
+  const [show, setShow] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => setIsVisible(false), 4000);
-        return () => clearTimeout(timer);
-    }, []);
-    
-    if (!isVisible) return null;
-    
-    return(
-        <div className="fixed inset-0 bg-[#2E2523] flex flex-col items-center justify-center z-50">
-            <div className="flex flex-col items-center space-y-6 animate-fade-in">
-                <h1 className="text-3xl font-semibold tracking-[6px]">TAOR</h1>
+  useEffect(() => {
+    const t = setTimeout(() => setShow(false), 2000);
+    return () => clearTimeout(t);
+  }, []);
 
-                <div className="overflow-hidden w-[500px] h-[280px] rounded-lg">
-                    <img 
-                        src={bgimage}
-                        alt="Preloader"
-                        className="w-full h-full object-cover animate-slide-in"
-                    />
-                </div>
-            </div>
-            <p className="text-sm tracking-[5px] animate-blink">LOADING</p>
-        </div>
-    );
+  if (!show) return null;
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "black",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+      }}
+    >
+      <h2 style={{ marginBottom: "20px", fontSize: "2rem" }}>
+        {preloaderData.heading}
+      </h2>
+
+      <img
+        src={preloaderData.image}
+        alt={preloaderData.heading}
+        style={{ width: preloaderData.imageWidth, height: "auto" }}
+      />n
+    </div>
+  );
 };
 
 export default Preloader;
-

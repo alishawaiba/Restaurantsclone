@@ -1,9 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-
-import bgImg from "../assets/Gallery.jpg";
-import galleryexplore1 from "../assets/galleryexplore1.jpg";
-import galleryexplore2 from "../assets/galleryexplore2.jpg";
+import { galleryImages } from "../constant/gallerySection";
 
 const Gallery = () => {
   const settings = {
@@ -22,29 +19,15 @@ const Gallery = () => {
 
       <div className="max-w-4xl mx-auto">
         <Slider {...settings}>
-          <div>
-            <img
-              src={bgImg}
-              alt="Gallery"
-              className="w-full h-[400px] object-cover rounded-lg"
-            />
-          </div>
-
-          <div>
-            <img
-              src={galleryexplore1}
-              alt="Explore 1"
-              className="w-full h-[400px] object-cover rounded-lg"
-            />
-          </div>
-
-          <div>
-            <img
-              src={galleryexplore2}
-              alt="Explore 2"
-              className="w-full h-[400px] object-cover rounded-lg"
-            />
-          </div>
+          {galleryImages.map((image) => (
+            <div key={image.id}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-[400px] object-cover rounded-lg"
+              />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

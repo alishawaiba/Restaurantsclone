@@ -1,12 +1,13 @@
 import React from "react";
 import bgVideo from "../../assets/res.mp4";
+import { heroData } from "../../constant/heroSection";
 
 export default function Hero() {
   return (
     <div id="home" className="relative h-screen w-full overflow-hidden">
       
       <video
-        src={bgVideo}   
+        src={bgVideo}
         autoPlay
         loop
         muted
@@ -17,14 +18,13 @@ export default function Hero() {
       
       <div className="absolute inset-0 bg-black/40"></div>
 
-      
+    
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-purple-500">
-          Welcome to TAOR Restaurant
+          {heroData.heading}
         </h1>
-        <p className="mt-4 text-white text-lg md:text-xl max-w-2xl"id="exploremenu">
-          Explore our delicious menu, browse our drinks, and discover the story
-          of our restaurant.
+        <p className="mt-4 text-white text-lg md:text-xl max-w-2xl" id="exploremenu">
+          {heroData.description}
         </p>
       </div>
     </div>
