@@ -30,7 +30,13 @@
           .animate-fadeIn {
             animation: fadeIn 0.8s ease-out;
           }
-        
-    
 
+
+.root {
+    --primary-color: rgb(171, 89, 171); /*purple*/
+    --secondary-color:gray;
+    
+    --primary-hover:   
+
+}
 

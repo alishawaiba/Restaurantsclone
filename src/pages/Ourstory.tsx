@@ -50,18 +50,22 @@ export default function OurStory() {
 
     
       <div className="flex flex-col text-center justify-center items-center mt-16 gap-6">
-        {features.map((feat, idx) => (
-          <div key={idx} className="flex items-center gap-4">
-            <span className="flex items-center justify-center bg-green-700 text-white rounded-full h-10 w-10">
-              {feat.icon}
-            </span>
-            <div>
-              <h3 className="font-semibold">{feat.title}</h3>
-              <p className="text-gray-600">{feat.description}</p>
-            </div>
-          </div>
-        ))}
+  {features.map((feat, idx) => {
+    const Icon = feat.icon; // assign the component to a variable
+    return (
+      <div key={idx} className="flex items-center gap-4">
+        <span className="flex items-center justify-center bg-green-700 text-white rounded-full h-10 w-10">
+          <Icon className="w-6 h-6" /> {/* render as JSX */}
+        </span>
+        <div>
+          <h3 className="font-semibold">{feat.title}</h3>
+          <p className="text-gray-600">{feat.description}</p>
+        </div>
       </div>
+    );
+  })}
+</div>
+
 
     
       <div className="relative h-screen w-full mt-16">

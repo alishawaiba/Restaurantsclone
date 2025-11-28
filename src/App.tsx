@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/hero/Footer";
+import Hero from "./components/footer/Footer";
+import Footer from"./components/footer/Footer";
 
 import Preloader from "./pages/preloader";
 import Home from "./pages/Home";
@@ -14,36 +15,23 @@ import Restaurants from "./pages/Restaurants";
 import Reservation from  "./pages/Reservation";
 import Gallery from "./pages/Gallery";
 
-export default function App(): JSX.Element {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const t = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(t);
-  }, []);
-
-  if (isLoading) {
-    return <Preloader />;
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <Navbar />
-
-      <main>
-        <Home />
-        <Menu />
-        <Drinks />
-        <Menu/>
-        <Offer />
-        <Contact/>
-        <Ourstory />
-        <Restaurants />
-        <Reservation />
-        <Gallery />
-      </main>
-
-      <Footer />
-    </div>
+function App()  {
+  return(
+    <>
+    <Preloader />
+    <Navbar />
+    <Hero />
+    <Home />
+    <Menu />
+    <Drinks />
+    <Offer />
+    <Contact />
+    <Ourstory />
+    <Restaurants />
+    <Reservation />
+    <Gallery />
+    <Footer />
+    </>
   );
 }
+  export default App;

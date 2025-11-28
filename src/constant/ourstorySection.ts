@@ -1,9 +1,10 @@
-import { Check } from "lucide-react";
+
 
 export interface Feature {
   title: string;
   description: string;
-  icon?: JSX.Element;
+  icon: React.ElementType;
+
 }
 
 export interface Stat {
